@@ -28,22 +28,3 @@ export const ProfileView: React.FC = () => {
     </div>
   );
 };
-
-
-import React from 'react';
-import { User } from 'lucide-react';
-
-export const ProfileView: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="text-center">
-        <User className="w-16 h-16 text-indigo-600 mx-auto mb-4" />
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">User Profile</h2>
-        <p className="text-gray-600 mb-6">Profile management coming soon</p>
-        <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
-          Edit Profile
-        </button>
-      </div>
-    </div>
-  );
-};
