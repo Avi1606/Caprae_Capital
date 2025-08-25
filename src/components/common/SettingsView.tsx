@@ -1,5 +1,21 @@
 import React from 'react';
+import React from 'react';
+import { Settings } from 'lucide-react';
 
+export const SettingsView: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <Settings className="w-16 h-16 text-indigo-600 mx-auto mb-4" />
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Settings</h2>
+        <p className="text-gray-600 mb-6">Application settings coming soon</p>
+        <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+          Configure Settings
+        </button>
+      </div>
+    </div>
+  );
+};
 export const SettingsView: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">

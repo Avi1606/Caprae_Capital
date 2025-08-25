@@ -1,13 +1,13 @@
 import React from 'react';
-import { LandingView } from './components/landing/LandingView.tsx';
-import { OnboardingView } from './components/onboarding/OnboardingView.tsx';
-import { SellerDashboard } from './components/seller/SellerDashboard.tsx';
-import { BuyerDashboard } from './components/buyer/BuyerDashboard.tsx';
-import { DealWorkflow } from './components/deal/DealWorkflow.tsx';
-import { ProfileView } from './components/common/ProfileView.tsx';
-import { SettingsView } from './components/common/SettingsView.tsx';
-import { usePlatformState } from './hooks/usePlatformState.ts';
-import { buyerProfiles, sellerQuestions, buyerQuestions } from './data/mockData.ts';
+import { LandingView } from './components/landing/LandingView';
+import { OnboardingView } from './components/onboarding/OnboardingView';
+import { SellerDashboard } from './components/seller/SellerDashboard';
+import { BuyerDashboard } from './components/buyer/BuyerDashboard';
+import { DealWorkflow } from './components/deal/DealWorkflow';
+import { ProfileView } from './components/common/ProfileView';
+import { SettingsView } from './components/common/SettingsView';
+import { usePlatformState } from './hooks/usePlatformState';
+import { buyerProfiles, sellerQuestions, buyerQuestions } from './data/mockData';
 import { BuyerProfile } from './types';
 
 const App = () => {
@@ -48,7 +48,7 @@ const App = () => {
         setMatches((prev: any) => [...prev, buyerId]);
         setTimeout(() => {
             setCurrentView('dealWorkflow');
-            setSelectedBuyer(buyerProfiles.find((b: { id: number; }) => b.id === buyerId) || null);
+            setSelectedBuyer(buyerProfiles.find((b: BuyerProfile) => b.id === buyerId) || null);
         }, 1000);
     };
 
@@ -71,7 +71,7 @@ const App = () => {
                     matches={matches}
                     onMatch={handleMatch}
                     onOpenProfile={(buyerId: number) => {
-                        const b = buyerProfiles.find((x: any) => x.id === buyerId) || null;
+                        const b = buyerProfiles.find((x: BuyerProfile) => x.id === buyerId) || null;
                         setSelectedBuyer(b);
                         setCurrentView('dealWorkflow');
                     }}
